@@ -2,12 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Serif+TC:wght@200..900&display=swap');
 
 // bootstrap
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 @import './helpers/variables';
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
+
+// utilities
+@import './utilities/utilities.scss';
+@import 'bootstrap/scss/utilities/api';
 
 // base
 @import './base/base';
+
+// component
+@import './components/button';
+@import './components/links';
 
 // layout
 @import './layout/header';

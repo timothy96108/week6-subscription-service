@@ -1,0 +1,18 @@
+.btn-accent-200 {
+  color: $white;
+  
+  &:hover,
+  &:active,
+  &.active,
+  &:first-child:active {
+    color: $white;
+    background-color: $accent-300;
+    border-color: $accent-300;
+  }
+
+  &:disabled {
+    color: $white;
+    background-color: $neutral-200;
+    border-color: $neutral-200;
+  }
+}
