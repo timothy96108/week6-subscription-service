@@ -1,0 +1,52 @@
+.navbar {
+  &-toggler {
+    border-width: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &-icon {
+      background-image: url('/assets/images/close.svg');
+    }
+
+    &.collapsed {
+      .navbar-toggler-icon {
+        background-image: var(--bs-navbar-toggler-icon-bg);
+      }
+    }
+  }
+
+  .nav-link {
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: $neutral-500;
+
+    &:hover,
+    &:active {
+      color: $accent-200;
+    }
+  }
+
+  .container-lg {
+    @media (min-width: 992px) {
+      border-bottom: 1px solid $neutral-300;
+    }
+  }
+}
+
+.search-field {
+  border: 1px solid $neutral-200;
+  border-radius: 100px;
+
+  input {
+    border-radius: 100px;
+  }
+
+  button {
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    line-height: 1;
+  }
+}
