@@ -1,0 +1,23 @@
+// hero
+.hero {
+  img {
+    height: calc(100vh - 80px);
+
+    @media (min-width: 992px) {
+      height: auto;
+    }
+  }
+
+  &-content {
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 992px) {
+      bottom: auto;
+      top: 50%;
+      left: 4rem;
+      transform: translateY(-50%);
+    }
+  }
+}
