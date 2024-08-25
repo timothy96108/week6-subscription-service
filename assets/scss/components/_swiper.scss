@@ -1,0 +1,22 @@
+.swiper {
+  &-button-group {
+    button:disabled {
+      background-color: $neutral-200;
+      border-color: $neutral-200;
+    }
+
+    .swiper-button-border {
+      width: 5rem;
+      border-bottom: 1px solid $neutral-400;
+      margin: 0 1.25rem;
+
+      @media (min-width: 992px) {
+        width: 2.5rem;
+      }
+
+      @media (min-width: 1400px) {
+        width: 5rem;
+      }
+    }
+  }
+}

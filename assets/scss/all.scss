@@ -10,12 +10,16 @@
 @import './utilities/utilities.scss';
 @import 'bootstrap/scss/utilities/api';
 
+// helpers
+@import './helpers/text-ellipsis';
+
 // base
 @import './base/base';
 
 // component
 @import './components/button';
 @import './components/links';
+@import './components/swiper';
 
 // layout
 @import './layout/header';
