@@ -1,0 +1,16 @@
+.list-group {
+  &-item {
+    background-color: $white;
+
+    &:hover {
+      background-color: $accent-100;
+      color: $neutral-500;
+    }
+
+    &:active,
+    &.active {
+      background-color: $accent-200;
+      color: $white;
+    }
+  }
+}

@@ -85,3 +85,16 @@
     }
   }
 }
+
+// trend
+.trend {
+  &-item {
+    &:first-child > img {
+      border-radius: 1.25rem 0 0 1.25rem;
+    }
+
+    &:last-child > img {
+      border-radius: 0 1.25rem 1.25rem 0;
+    }
+  }
+}
