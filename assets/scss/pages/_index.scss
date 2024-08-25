@@ -51,3 +51,37 @@
     border-radius: 1.25rem 0 1.25rem 0;
   }
 }
+
+// event
+.event {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 0;
+  }
+
+  &::before {
+    left: 0;
+
+    @media (min-width: 768px) {
+      width: 217px;
+      height: 73px;
+      background-image: url('/assets/images/bg-1.png');
+    }
+  }
+
+  &::after {
+    right: 0;
+    width: 130px;
+    height: 96px;
+    background-image: url('/assets/images/bg-2-sm.png');
+
+    @media (min-width: 768px) {
+      width: 260px;
+      height: 188px;
+      background-image: url('/assets/images/bg-2.png');
+    }
+  }
+}

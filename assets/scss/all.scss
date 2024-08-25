@@ -7,8 +7,9 @@
 @import 'bootstrap/scss/bootstrap';
 
 // utilities
-@import './utilities/utilities.scss';
+@import './utilities/utilities';
 @import 'bootstrap/scss/utilities/api';
+@import './utilities/sizing';
 
 // helpers
 @import './helpers/text-ellipsis';
