@@ -470,6 +470,7 @@ $spacers: (
   12: $spacer * 3,
   15: $spacer * 3.75,
   20: $spacer * 5,
+  25: $spacer * 6.25,
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -1670,9 +1671,11 @@ $progress-bar-transition:           width .6s ease !default;
 // scss-docs-start list-group-variables
 $list-group-color:                  var(--#{$prefix}body-color) !default;
 $list-group-bg:                     var(--#{$prefix}body-bg) !default;
-$list-group-border-color:           var(--#{$prefix}border-color) !default;
+// $list-group-border-color:           var(--#{$prefix}border-color) !default;
+$list-group-border-color:           transparent !default;
 $list-group-border-width:           var(--#{$prefix}border-width) !default;
-$list-group-border-radius:          var(--#{$prefix}border-radius) !default;
+// $list-group-border-radius:          var(--#{$prefix}border-radius) !default;
+$list-group-border-radius:          0 !default;
 
 $list-group-item-padding-y:         $spacer * .5 !default;
 $list-group-item-padding-x:         $spacer !default;
@@ -1684,7 +1687,8 @@ $list-group-item-color-scale:       40% !default; // Deprecated in v5.3.0
 $list-group-hover-bg:               var(--#{$prefix}tertiary-bg) !default;
 $list-group-active-color:           $component-active-color !default;
 $list-group-active-bg:              $component-active-bg !default;
-$list-group-active-border-color:    $list-group-active-bg !default;
+// $list-group-active-border-color:    $list-group-active-bg !default;
+$list-group-active-border-color:    $accent-200 !default;
 
 $list-group-disabled-color:         var(--#{$prefix}secondary-color) !default;
 $list-group-disabled-bg:            $list-group-bg !default;

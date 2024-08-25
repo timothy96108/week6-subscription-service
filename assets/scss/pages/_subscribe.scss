@@ -1,0 +1,22 @@
+.subscribe {
+  &-item {
+    color: $neutral-400;
+    border-color: white;
+    transition: 0.3s;
+
+    &:hover {
+      color: $neutral-500;
+      border-color: $accent-200;
+    }
+  }
+
+  &-link {
+    border-radius: 100px;
+    transition: 0.3s;
+
+    &:hover {
+      color: $white;
+      background-color: $accent-200;
+    }
+  }
+}
