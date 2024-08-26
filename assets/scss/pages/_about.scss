@@ -1,0 +1,17 @@
+.about {
+  &-banner {
+    height: 240px;
+
+    @media (min-width: 768px) {
+      height: 454px;
+    }
+  }
+
+  &-brand-photo {
+    height: 240px;
+
+    @media (min-width: 992px) {
+      height: 390px;
+    }
+  }
+}
