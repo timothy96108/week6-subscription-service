@@ -993,7 +993,8 @@ $input-border-radius-sm:                var(--#{$prefix}border-radius-sm) !defau
 $input-border-radius-lg:                var(--#{$prefix}border-radius-lg) !default;
 
 $input-focus-bg:                        $input-bg !default;
-$input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
+// $input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
+$input-focus-border-color:              transparent !default;
 $input-focus-color:                     $input-color !default;
 // $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-width:                     0 !default;
@@ -1035,7 +1036,8 @@ $form-check-input-border:                 var(--#{$prefix}border-width) solid va
 $form-check-input-border-radius:          .25em !default;
 $form-check-radio-border-radius:          50% !default;
 $form-check-input-focus-border:           $input-focus-border-color !default;
-$form-check-input-focus-box-shadow:       $focus-ring-box-shadow !default;
+// $form-check-input-focus-box-shadow:       $focus-ring-box-shadow !default;
+$form-check-input-focus-box-shadow:       none !default;
 
 $form-check-input-checked-color:          $component-active-color !default;
 // $form-check-input-checked-bg-color:       $component-active-bg !default;
