@@ -1,0 +1,45 @@
+.article {
+  &-banner {
+    height: 240px;
+
+    @media (min-width: 768px) {
+      height: 454px;
+    }
+  }
+
+  &-photo {
+    height: 228px;
+
+    @media (min-width: 992px) {
+      height: 390px;
+    }
+  }
+
+  &-more-photo {
+    height: 200px;
+
+    @media (min-width: 768px) {
+      height: 147px;
+    }
+  }
+
+  &-locked {
+    height: 563px;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    }
+
+    @media (min-width: 768px) {
+      height: 614px;
+    }
+  }
+}
