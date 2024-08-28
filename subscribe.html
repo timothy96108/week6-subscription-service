@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivre</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script type="module" crossorigin src="/week6-subscription-service/assets/bootstrap.min-fb7f5f4f.js"></script>
+  <link rel="stylesheet" href="/week6-subscription-service/assets/bootstrap-30add851.css">
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light py-0">
+  <div class="container-lg py-5 py-lg-9">
+    <a class="navbar-brand me-lg-9" href="./index.html">
+      <img src="data:image/png;base64,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" alt="brand logo">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-6 mt-lg-0" id="navbarCollapse">
+      <form class="search-field position-relative mb-6 mb-lg-0">
+        <input class="form-control me-2" type="text" placeholder="搜尋文章" aria-label="Search">
+        <button class="btn border-0 p-0 position-absolute" type="button">
+          <i class="bi bi-search fs-4 text-accent-200"></i>
+        </button>
+      </form>
+      <ul class="navbar-nav ms-auto gap-6 mb-10 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="#">所有文章</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="./subscribe.html">訂閱方案</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="./about.html">關於我們</a>
+        </li>
+      </ul>
+      <a href="./register.html" class="btn btn-accent-200 h6 w-100 w-lg-auto ms-lg-5">登入 / 註冊</a>
+    </div>
+  </div>
+</nav>
+      <main>
+        <div class="container pt-4 pb-15 py-lg-20">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
+              <li class="breadcrumb-item active" aria-current="page">訂閱方案</li>
+            </ol>
+          </nav>
+          <h2 class="h3 fs-lg-1 mb-10 mb-lg-15">訂閱方案</h2>
+          <div class="list-group list-group-horizontal text-center mb-6 mb-lg-10" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active h6" id="list-year-list" data-bs-toggle="list"
+              href="#list-year" role="tab" aria-controls="list-year">年繳</a>
+            <a class="list-group-item list-group-item-action h6" id="list-month-list" data-bs-toggle="list"
+              href="#list-month" role="tab" aria-controls="list-month">月繳</a>
+          </div>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-year" role="tabpanel" aria-labelledby="list-year-list">
+              <ul class="row list-unstyled g-6">
+                <li class="col-lg-4">
+                  <div class="subscribe-item card bg-white border-2 shadow-sm h-100 p-6 p-lg-8">
+                    <div class="text-center mb-9 mb-lg-25">
+                      <p class="mb-4">輕量型</p>
+                      <h3 class="subscribe-title h2">NT 99 <span class="fs-5 fs-lg-4">/ 月</span></h3>
+                    </div>
+                    <ul class="list-unstyled d-flex flex-column gap-7 mb-15">
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        每月最新文章無限閱讀
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        專屬會員限定內容
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        定期電子報
+                      </li>
+                    </ul>
+                    <div class="mt-lg-auto">
+                      <a href="./payment.html" class="subscribe-link stretched-link d-block text-center py-3">
+                        我要訂閱
+                        <i class="bi bi-arrow-right ms-3"></i>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="col-lg-4">
+                  <div class="subscribe-item card bg-white border-2 shadow-sm h-100 p-6 p-lg-8">
+                    <div class="text-center mb-9 mb-lg-25">
+                      <p class="mb-4">玩咖型</p>
+                      <h3 class="subscribe-title h2">NT 159 <span class="fs-5 fs-lg-4">/ 月</span></h3>
+                    </div>
+                    <ul class="list-unstyled d-flex flex-column gap-7 mb-15">
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        每月最新文章無限閱讀
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        專屬會員限定內容
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        定期電子報
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        年度精選禮物
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        24/7 優先客戶服務
+                      </li>
+                    </ul>
+                    <div class="mt-lg-auto">
+                      <a href="./payment.html" class="subscribe-link stretched-link d-block text-center py-3">
+                        我要訂閱
+                        <i class="bi bi-arrow-right ms-3"></i>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="col-lg-4">
+                  <div class="subscribe-item card bg-white border-2 shadow-sm h-100 p-6 p-lg-8">
+                    <div class="text-center mb-9 mb-lg-15">
+                      <p class="mb-4">家庭型</p>
+                      <h3 class="subscribe-title h2 mb-4">NT599 <span class="fs-5 fs-lg-4">/ 月</span></h3>
+                      <del class="text-center">NT899</del>
+                    </div>
+                    <ul class="list-unstyled d-flex flex-column gap-7 mb-15">
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        每月最新文章無限閱讀
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        專屬會員限定內容
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        定期電子報
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        年度精選禮物
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        24/7 優先客戶服務
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        為每個成員打造專屬行程
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        最多 5 個家庭成員共享
+                      </li>
+                    </ul>
+                    <div class="mt-lg-auto">
+                      <a href="./payment.html" class="subscribe-link stretched-link d-block text-center py-3">
+                        我要訂閱
+                        <i class="bi bi-arrow-right ms-3"></i>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="list-month" role="tabpanel" aria-labelledby="list-month-list">
+              <ul class="row list-unstyled g-6">
+                <li class="col-lg-4">
+                  <div class="subscribe-item card bg-white border-2 shadow-sm h-100 p-6 p-lg-8">
+                    <div class="text-center mb-9 mb-lg-20">
+                      <p class="mb-4">輕量型</p>
+                      <h3 class="subscribe-title h2">NT 149 <span class="fs-5 fs-lg-4">/ 月</span></h3>
+                    </div>
+                    <ul class="list-unstyled d-flex flex-column gap-7 mb-15">
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        每月最新文章無限閱讀
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        專屬會員限定內容
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        定期電子報
+                      </li>
+                    </ul>
+                    <div class="mt-lg-auto">
+                      <a href="./payment.html" class="subscribe-link stretched-link d-block text-center py-3">
+                        我要訂閱
+                        <i class="bi bi-arrow-right ms-3"></i>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="col-lg-4">
+                  <div class="subscribe-item card bg-white border-2 shadow-sm h-100 p-6 p-lg-8">
+                    <div class="text-center mb-9 mb-lg-20">
+                      <p class="mb-4">玩咖型</p>
+                      <h3 class="subscribe-title h2">NT 199 <span class="fs-5 fs-lg-4">/ 月</span></h3>
+                    </div>
+                    <ul class="list-unstyled d-flex flex-column gap-7 mb-15">
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        每月最新文章無限閱讀
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        專屬會員限定內容
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        定期電子報
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        年度精選禮物
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        24/7 優先客戶服務
+                      </li>
+                    </ul>
+                    <div class="mt-lg-auto">
+                      <a href="./payment.html" class="subscribe-link stretched-link d-block text-center py-3">
+                        我要訂閱
+                        <i class="bi bi-arrow-right ms-3"></i>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="col-lg-4">
+                  <div class="subscribe-item card bg-white border-2 shadow-sm h-100 p-6 p-lg-8">
+                    <div class="text-center mb-9 mb-lg-20">
+                      <p class="mb-4">家庭型</p>
+                      <h3 class="subscribe-title h2">NT899 <span class="fs-5 fs-lg-4">/ 月</span></h3>
+                    </div>
+                    <ul class="list-unstyled d-flex flex-column gap-7 mb-15">
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        每月最新文章無限閱讀
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        專屬會員限定內容
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        定期電子報
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        年度精選禮物
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        24/7 優先客戶服務
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        為每個成員打造專屬行程
+                      </li>
+                      <li class="h6">
+                        <i class="bi bi-check-square-fill me-2"></i>
+                        最多 5 個家庭成員共享
+                      </li>
+                    </ul>
+                    <div class="mt-lg-auto">
+                      <a href="./payment.html" class="subscribe-link stretched-link d-block text-center py-3">
+                        我要訂閱
+                        <i class="bi bi-arrow-right ms-3"></i>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+  <div class="container-lg py-5 py-lg-6 border-top border-neutral-300">
+    <p class="h6 text-primary-400 fw-normal text-center">©Vivre 2024 All right Reserved</p>
+  </div>
+</footer>
+        
+  </body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivre</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script type="module" crossorigin src="/week6-subscription-service/assets/bootstrap.min-fb7f5f4f.js"></script>
+  <link rel="stylesheet" href="/week6-subscription-service/assets/bootstrap-30add851.css">
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light py-0">
+  <div class="container-lg py-5 py-lg-9">
+    <a class="navbar-brand me-lg-9" href="./index.html">
+      <img src="data:image/png;base64,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" alt="brand logo">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-6 mt-lg-0" id="navbarCollapse">
+      <form class="search-field position-relative mb-6 mb-lg-0">
+        <input class="form-control me-2" type="text" placeholder="搜尋文章" aria-label="Search">
+        <button class="btn border-0 p-0 position-absolute" type="button">
+          <i class="bi bi-search fs-4 text-accent-200"></i>
+        </button>
+      </form>
+      <ul class="navbar-nav ms-auto gap-6 mb-10 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="#">所有文章</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="./subscribe.html">訂閱方案</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="./about.html">關於我們</a>
+        </li>
+      </ul>
+      <a href="./register.html" class="btn btn-accent-200 h6 w-100 w-lg-auto ms-lg-5">登入 / 註冊</a>
+    </div>
+  </div>
+</nav>
+      <main>
+        <img src="/week6-subscription-service/assets/about-banner-f7ef85b0.jpg" alt="banner photo" class="about-banner w-100 object-fit-cover">
+
+        <div class="container pt-6 pt-md-15 pt-lg-20">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
+              <li class="breadcrumb-item active" aria-current="page">關於我們</li>
+            </ol>
+          </nav>
+          <h2 class="h4 fs-lg-1">關於我們</h2>
+        </div>
+
+        <section class="container py-10 py-md-15 py-lg-20">
+          <div class="row mb-lg-15">
+            <div class="col-lg-6 mb-6 mb-lg-0">
+              <img src="/week6-subscription-service/assets/about-1-116470b0.jpg" alt="brand photo"
+                class="about-brand-photo rounded w-100 object-fit-cover">
+            </div>
+            <div class="col-lg-6 mb-6 mb-lg-0">
+              <div class="px-3 px-lg-10 text-neutral-400">
+                <h3 class="h4 fs-lg-2 text-neutral-600 mb-3">Vivre</h3>
+                <p class="mb-4 mb-lg-9">
+                  Vivre 這個品牌名稱源自法語，意為"生活"、"活著"。它象徵著我們對於高品質生活的熱愛與追求。Vivre 旨在成為一個分享美好生活體驗、發掘生活質感的平台。
+                </p>
+                <p class="h6 text-neutral-600 mb-3">我們的品牌價值</p>
+                <ul class="d-flex flex-column gap-2 ps-4">
+                  <li>熱愛生活，好奇心永存</li>
+                  <li>品味獨具，講究生活質感</li>
+                  <li>分享真實生活，啟發生活靈感</li>
+                  <li>推廣慢生活哲學，注重內在修為</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row flex-lg-row-reverse">
+            <div class="col-lg-6 mb-6 mb-lg-0">
+              <img src="/week6-subscription-service/assets/about-2-ead8a5f1.jpg" alt="brand photo"
+                class="about-brand-photo rounded w-100 object-fit-cover">
+            </div>
+            <div class="col-lg-6">
+              <div class="px-3 px-lg-10 text-neutral-400">
+                <h3 class="h4 fs-lg-2 text-neutral-600 mb-3">風格特色</h3>
+                <p class="mb-4 mb-lg-9">
+                  Vivre
+                  所展現的風格特色，可以用知性、親和、用心、優雅與獨特這些詞語來概括。我們講求內容的原創性與探索精神，不跟風追隨潮流話題，而是真誠分享獨特的生活視角與體驗。無論是旅行、美食、居家、時尚等生活領域，我們都希望能夠呈現出與眾不同、縝密入微、內外兼具的見解，給讀者帶來嶄新的感受和啟迪。
+                </p>
+                <p>
+                  無論您是對美食、旅行、居家生活還是時尚風尚有獨到的見解和體會，只要切合 Vivre 的價值理念與風格調性，我們都熱烈歡迎您加入這個平台，與我們一起分享和交流生活的點點滴滴。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-primary-200 py-10 py-md-15 py-lg-20">
+          <div class="container">
+            <div class="px-3">
+              <div class="row">
+                <div class="col-lg-4 mb-6">
+                  <h2 class="h4 fs-lg-2 text-center text-lg-start">大事記</h2>
+                </div>
+                <div class="col-lg-8">
+                  <ul class="list-unstyled d-flex flex-column gap-20">
+                    <li class="d-lg-flex gap-12 gap-xl-20 align-items-start">
+                      <div class="d-inline-block bg-primary-400 text-white p-3 mb-6">2020</div>
+                      <ul class="list-unstyled d-flex flex-column gap-6">
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">05 月</p>
+                            <p class="border-start border-neutral-300 ps-3">創辦人茱麗葉、亞歷山大和幾個好友在巴黎開設 Vivre
+                              生活部落格，紀錄分享他們對美好生活的想法和體驗。</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">10 月</p>
+                            <p class="border-start border-neutral-300 ps-3">部落格內容和讀者人數逐漸累積，決定成立 Vivre 品牌，開發更多元豐富的內容。</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="d-lg-flex gap-12 gap-xl-20 align-items-start">
+                      <div class="d-inline-block bg-primary-400 text-white p-3 mb-6">2021</div>
+                      <ul class="list-unstyled d-flex flex-column gap-6">
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">03 月</p>
+                            <p class="border-start border-neutral-300 ps-3">Vivre 網站正式上線，除了原創文字內容，還加上了視訊、音訊等多媒體形式。</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">07 月</p>
+                            <p class="border-start border-neutral-300 ps-3">與法國本土品牌合作，推出 Vivre 首個自有產品線，包括家飾、餐飲用品等生活品味商品。
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">12 月</p>
+                            <p class="border-start border-neutral-300 ps-3">總瀏覽人次突破 100 萬大關，獲得實體出版社青睞，出版 Vivre 生活風格書籍。
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="d-lg-flex gap-12 gap-xl-20 align-items-start">
+                      <div class="d-inline-block bg-primary-400 text-white p-3 mb-6">2022</div>
+                      <ul class="list-unstyled d-flex flex-column gap-6">
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">03 月</p>
+                            <p class="border-start border-neutral-300 ps-3">推出 Vivre 生活風格線上課程，聘請各領域專家開設有深度的付費課程。</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">08 月</p>
+                            <p class="border-start border-neutral-300 ps-3">Vivre 舉辦首屆 Vivre 生活節，線上線下同步展開，現場湧入大批品牌粉絲朋友。
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">10 月</p>
+                            <p class="border-start border-neutral-300 ps-3">Vivre 完成 A 輪融資，獲得知名風投資金青睞。</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="d-lg-flex gap-12 gap-xl-20 align-items-start">
+                      <div class="d-inline-block bg-primary-400 text-white p-3 mb-6">2023</div>
+                      <ul class="list-unstyled d-flex flex-column gap-6">
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">01 月</p>
+                            <p class="border-start border-neutral-300 ps-3">Vivre 宣布品牌願景"探索更美好的生活"，並推出全新視覺形象。</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">05 月</p>
+                            <p class="border-start border-neutral-300 ps-3">正式推出付費訂閱會員服務，提供高階獨家內容和會員優惠。</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">09 月</p>
+                            <p class="border-start border-neutral-300 ps-3">首次評選年度" Vivre 生活風格大獎"，表彰在各領域具有開創性的人物及品牌。</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-start">
+                            <p class="text-neutral-400 flex-shrink-0 me-3">11 月</p>
+                            <p class="border-start border-neutral-300 ps-3">首次登場的" Vivre 生活節沙龍"在全球主要城市同步舉行，線上線下吸引百萬人觀看。
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container py-10 py-md-15 py-lg-20">
+          <div class="w-lg-75 mx-auto">
+            <div class="px-3 px-lg-10">
+              <h2 class="h4 fs-lg-2 text-center mb-6 mb-lg-9">品牌願景</h2>
+              <p class="mb-6 mb-lg-9">
+                我們的目標不僅是為讀者提供高水準的內容，更希望能真正啟發和影響讀者的生活方式與價值觀，引領走向更有意義、品質與質感的生活體驗。我們相信，生活的意義不僅僅在於外在物質條件的滿足，更多的是一種心靈層面的追求，一種對美好事物的不懈向往。因此，Vivre
+                的定位是成為啟迪現代人內在生活的引路人，給予靈感啟迪，引領讀者去體驗生活的真諦。
+              </p>
+              <p>
+                我們衷心期盼，Vivre 能為現代人的生活帶來無限靈感啟發，讓每個人的生活之路不僅優雅、從容，更有內在的意義與價值，豐富而燦爛。讓我們共同努力，將生活過得更有滋有味！期待您一同加入
+                Vivre，攜手同行這段美妙的人生旅程。
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+  <div class="container-lg py-5 py-lg-6 border-top border-neutral-300">
+    <p class="h6 text-primary-400 fw-normal text-center">©Vivre 2024 All right Reserved</p>
+  </div>
+</footer>
+        
+  </body>
+
+</html>

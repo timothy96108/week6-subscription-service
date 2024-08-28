@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivre</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script type="module" crossorigin src="/week6-subscription-service/assets/index-18611791.js"></script>
+  <link rel="modulepreload" crossorigin href="/week6-subscription-service/assets/bootstrap.min-fb7f5f4f.js">
+  <link rel="stylesheet" href="/week6-subscription-service/assets/bootstrap-30add851.css">
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light py-0">
+  <div class="container-lg py-5 py-lg-9">
+    <a class="navbar-brand me-lg-9" href="./index.html">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAcCAYAAACeeLqCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAX9SURBVHgB5VprUiJXFD7n0qipJBWyguAKBkudUvLDJhsYXcHgCgZXMLiCwR3gCjKzgeFaGdAanEhWIFlB+BkF++Y7TTd2Nw00DyFVfFV6uy/9OH3P6zunm2kF2Du0PximYzbU6m3SaUvrDq0pLFoy9vKFN0SmxLLDlLW61MbWGa0pFC0ZbEw2vE8ZWmNYr18XXpnU8yL0mNt3jc9/0xzYyf/2i4WFjrtWd5Mu049UMkRZ7HbSpMq0xrAcyxxjLPsTikwVwynNAUWORozPfkecjf7mxfvtgwM7u7VFHa0/r238F3DOtjPWI91je+AFT6Sys3rB/mHhyLDRiPHVZkPPpch1gHItkqkanEyxU6IZgcV3z1330JIUbhK2nugiNGuoKJ5BUyKHsILhGArVjTnzyLrApaE3N7q9n7erSIxFb17C0juM5zQFUoreuxuc7DwhAF2LO3crUpYYGT+qn6L3l/n0A7+S7e6m+WvaOiUPEtL12N6k89nfgAJyUMBd4LdOb4O2k95crN9SdA9a2W5e6+1xx+4d2O+NIqkFMkjWxW91fTl0zKFdk0TuCSmyFKZZiL28/Ts8OXN7rQvR33ag+FTKVHBhO5ir3PxFpizzoRMMVXCdsbWKfy5kzjENUeuWcajy7Wb4OQd1AIRo4UY68JvvBYmQZnojIxRQHnecsB/ctRwjZFgwRVUck+U+Xc2lH+gtJYQsBoZjZcK5zYdlIU95i+wr2TUKkIehxQeYx8vqnyvHsaITy6FtyL2jYFwY2yI/5qu7h/a9UPSQLKEbEZehRR2YKsEdL5JYnsNUwgO3v8ZoeRY8pukTDEDu6z68A1kwXCQ512FTTCqLMZTdP7TfQRFl7HawiFXM9Z9XlGHIhreOvI60VXBcCcd9hOefRH5uweCunhTVpO7BtbPKOBpKsP2wF6qEm9e1q1m8YPdX+61nqRVaEDylD64nwu8e2BO9QEIhZCnigT9SAojcYjzYqPyAkNus67Pbhj53/+q6IFZ8+0XruHNFcbL4EnY3WMUyR8mvcLNi8DlSxqn6+2pYIC5HpkoTGZEXdtKsEj10UiDui8UPvA/CFyed4xMBLEhiY8AiaCz2mY7x9K/1eC8SRbuKcwUbz/rEsE0/FJF3vO2FyeFmnBwMtwrGwrGMyEs+YnXVRVNP8QIkU1nIclBw11Nj4Fv/tLLMUrOkUnQEy8/KtoOubj4S26N4JKdF/SjRB8Ik/l/FNuPivIBG4KULr6gXuCxlBHwiMK0ssxgOO8/eCM+sYIHb4/5I6qMAkNNsGWPb0XFeIPE3SqMGhRcSUOP6Zbj8NF4gIYElHNSXUFeE2dK5EwwxCaCI/5HRGn39CCPqs4SQAgaFVyoZO5kV4gUIg2V/3/OCEL93iYCEBJ6vkZgEQqV7gX0wqPs/67Oxv5HvA6KMSLK3nzgEg3gLBjCKJSwK4gUS1wcTgSQ2AIjAMmQRPDGH4r1yZn+nMfaFjBRDwf1g/E1aeC0MhqvBXaefxFzIWza3aFuSLCljQiHOROL7NBirAKFgPII+OR7/XVThNQlDHgnvG1SVxixVln+3KExX0X6Ytnkp6yjyT3wlyRy2KvECv/BamvX7skTYmbTNXSLQT4gLKwInwS0S52jbiMzSurC6zs8TFSAtAQrQQK88dx/WUkrTEjFUqaNtnmL6IJuLLgInIRqegdLOhFpAIIsP8lKT4q3Z1K2JCoi2BATSSHuJwisJIl6QYfm8ZQWyeBVyKzCV8fo8I5UgYUcWX6LHhlFFmUv0WYpHA6XgGsS5Vb3xiqlRViYLup4nPeW28N11cfs8KLp28W5FgTSkmdsy/8COLYUbwo60v4U1FRs3Mc24URhqjK3I+gew+H8hizTaoIQdjhRhbjMQMd6vglna4n2D6cjiB8lC4u+Cgi2Bce3ZZeD2j9on/6FXLYsoIeVQIVSnxAExf4NULsrUEn8ZJ16A9mtZKFdzjmJHKJzVe65if7RCcTQxuMfHxqLs7ZeapulxQQtUnNtyJjpFhXzeTVMOVn5E/gdnaNR9v0mXesQ7lf8AHOrUEx/i07UAAAAASUVORK5CYII=" alt="brand logo">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-6 mt-lg-0" id="navbarCollapse">
+      <form class="search-field position-relative mb-6 mb-lg-0">
+        <input class="form-control me-2" type="text" placeholder="搜尋文章" aria-label="Search">
+        <button class="btn border-0 p-0 position-absolute" type="button">
+          <i class="bi bi-search fs-4 text-accent-200"></i>
+        </button>
+      </form>
+      <ul class="navbar-nav ms-auto gap-6 mb-10 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="#">所有文章</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="./subscribe.html">訂閱方案</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h6 p-3" href="./about.html">關於我們</a>
+        </li>
+      </ul>
+      <a href="./register.html" class="btn btn-accent-200 h6 w-100 w-lg-auto ms-lg-5">登入 / 註冊</a>
+    </div>
+  </div>
+</nav>
+      <main>
+        <!-- hero -->
+        <section class="hero my-lg-20">
+          <div class="container-lg px-0 px-lg-3 position-relative">
+            <picture>
+              <source srcset="/week6-subscription-service/assets/banner-ff141a3d.png " media="(min-width: 992px)">
+              <img src="/week6-subscription-service/assets/banner-sm-b71d5231.jpg" alt="banner picture" class="w-100 object-fit-cover">
+            </picture>
+            <div class="hero-content text-center text-lg-start text-white position-absolute w-100 w-lg-auto">
+              <p class="h6 fs-lg-5 mb-2 mb-lg-3">獻給新世代的生活風格誌</p>
+              <p class="h3 fs-lg-1 mb-5 mb-lg-6">一起探索生活的無限可能</p>
+              <a href="./subscribe.html" class="btn btn-accent-200 fw-bold px-lg-6 py-lg-4">
+                馬上訂閱
+                <i class="bi bi-arrow-right ms-3"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- theme -->
+        <section class="container py-12 py-lg-20">
+          <h2 class="h4 fs-lg-2 mb-6">熱門主題</h2>
+          <ul class="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-2 gy-md-4 gy-lg-6">
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-1-c3f2428d.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-1-sm-e28ce55e.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  城市漫遊者
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-3-6a361920.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-3-sm-03d78e75.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  秘境尋蹤人
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-5-b39e8856.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-5-sm-65d802c3.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  品味設計家
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-8-ce962716.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-8-sm-402e892b.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  美食探險記
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-2-f68e2e55.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-2-sm-2123bacc.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  美學建築誌
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-4-3688ebf7.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-4-sm-0dfc8cb3.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  慢活生活行
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-6-82f2b629.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-6-sm-fed41742.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  工藝匠心賞
+                </p>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="theme-link d-block position-relative">
+                <picture>
+                  <source srcset="/week6-subscription-service/assets/theme-7-88f0cd69.png " media="(min-width: 992px)">
+                  <img src="/week6-subscription-service/assets/theme-7-sm-0e3e7b41.png" alt="theme photo" class="theme-img w-100">
+                </picture>
+                <p
+                  class="theme-title h6 fs-lg-5 position-absolute top-50 translate-middle-y w-100 text-center text-white">
+                  時尚先鋒派
+                </p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- article -->
+        <section class="container py-12 py-lg-20">
+          <h2 class="h4 mb-6 d-lg-none">精選文章</h2>
+          <div class="row flex-lg-row-reverse">
+            <div class="col-lg-9 col-xxl-8">
+              <div class="swiper-article swiper">
+                <ul class="swiper-wrapper p-0">
+                  <li class="swiper-slide">
+                    <div class="card border-0 border-bottom border-neutral-500 rounded-0">
+                      <img src="/week6-subscription-service/assets/article-1-2231d658.jpg" class="card-img-top rounded-2" alt="article photo">
+                      <div class="card-body px-0 py-6">
+                        <h3 class="card-title h5 mb-2">私人島嶼的露營奇遇記</h3>
+                        <p class="card-text text-ellipsis text-neutral-400 mb-6">
+                          遠離塵囂，用全新的眼光重塑生活的舒適本味。徜徉在環山綠野間，在這處隱世私家別墅裡，盡情領略池畔優閒時光，任林間微風撫面，聆聽花鳥嘶啞之音，重拾內心深處的寧靜安詳。
+                        </p>
+                        <a href="./article.html"
+                          class="link-accent-200 h5 fw-bold d-flex justify-content-between align-items-center">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="card border-0 border-bottom border-neutral-500 rounded-0">
+                      <img src="/week6-subscription-service/assets/article-2-5b21233f.jpg" class="card-img-top rounded-2" alt="article photo">
+                      <div class="card-body px-0 py-6">
+                        <h3 class="card-title h5 mb-2">窺探米其林三星主廚的絕密手藝</h3>
+                        <p class="card-text text-ellipsis text-neutral-400 mb-6">
+                          在這間隱世餐廳，來一場味蕾與靈魂的盛宴。幽微燈火下，透過巨匠大師的獨門料理，領略食材中蘊藏的大自然馨香脈絡。營造只屬於你我的私密小宇宙，沉浸其中，品嘗人生至臻至美的風味。
+                        </p>
+                        <a href="./article.html"
+                          class="link-accent-200 h5 fw-bold d-flex justify-content-between align-items-center">
+                          Read More
+                          <span class="badge bg-primary-300 text-primary-400">會員專屬</span>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="card border-0 border-bottom border-neutral-500 rounded-0">
+                      <img src="/week6-subscription-service/assets/article-1-2231d658.jpg" class="card-img-top rounded-2" alt="article photo">
+                      <div class="card-body px-0 py-6">
+                        <h3 class="card-title h5 mb-2">私人島嶼的露營奇遇記</h3>
+                        <p class="card-text text-ellipsis text-neutral-400 mb-6">
+                          遠離塵囂，用全新的眼光重塑生活的舒適本味。徜徉在環山綠野間，在這處隱世私家別墅裡，盡情領略池畔優閒時光，任林間微風撫面，聆聽花鳥嘶啞之音，重拾內心深處的寧靜安詳。
+                        </p>
+                        <a href="./article.html"
+                          class="link-accent-200 h5 fw-bold d-flex justify-content-between align-items-center">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="card border-0 border-bottom border-neutral-500 rounded-0">
+                      <img src="/week6-subscription-service/assets/article-2-5b21233f.jpg" class="card-img-top rounded-2" alt="article photo">
+                      <div class="card-body px-0 py-6">
+                        <h3 class="card-title h5 mb-2">窺探米其林三星主廚的絕密手藝</h3>
+                        <p class="card-text text-ellipsis text-neutral-400 mb-6">
+                          在這間隱世餐廳，來一場味蕾與靈魂的盛宴。幽微燈火下，透過巨匠大師的獨門料理，領略食材中蘊藏的大自然馨香脈絡。營造只屬於你我的私密小宇宙，沉浸其中，品嘗人生至臻至美的風味。
+                        </p>
+                        <a href="./article.html"
+                          class="link-accent-200 h5 fw-bold d-flex justify-content-between align-items-center">
+                          Read More
+                          <span class="badge bg-primary-300 text-primary-400">會員專屬</span>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="card border-0 border-bottom border-neutral-500 rounded-0">
+                      <img src="/week6-subscription-service/assets/article-1-2231d658.jpg" class="card-img-top rounded-2" alt="article photo">
+                      <div class="card-body px-0 py-6">
+                        <h3 class="card-title h5 mb-2">私人島嶼的露營奇遇記</h3>
+                        <p class="card-text text-ellipsis text-neutral-400 mb-6">
+                          遠離塵囂，用全新的眼光重塑生活的舒適本味。徜徉在環山綠野間，在這處隱世私家別墅裡，盡情領略池畔優閒時光，任林間微風撫面，聆聽花鳥嘶啞之音，重拾內心深處的寧靜安詳。
+                        </p>
+                        <a href="./article.html"
+                          class="link-accent-200 h5 fw-bold d-flex justify-content-between align-items-center">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="card border-0 border-bottom border-neutral-500 rounded-0">
+                      <img src="/week6-subscription-service/assets/article-2-5b21233f.jpg" class="card-img-top rounded-2" alt="article photo">
+                      <div class="card-body px-0 py-6">
+                        <h3 class="card-title h5 mb-2">窺探米其林三星主廚的絕密手藝</h3>
+                        <p class="card-text text-ellipsis text-neutral-400 mb-6">
+                          在這間隱世餐廳，來一場味蕾與靈魂的盛宴。幽微燈火下，透過巨匠大師的獨門料理，領略食材中蘊藏的大自然馨香脈絡。營造只屬於你我的私密小宇宙，沉浸其中，品嘗人生至臻至美的風味。
+                        </p>
+                        <a href="./article.html"
+                          class="link-accent-200 h5 fw-bold d-flex justify-content-between align-items-center">
+                          Read More
+                          <span class="badge bg-primary-300 text-primary-400">會員專屬</span>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xxl-4">
+              <div class="d-lg-flex flex-lg-column h-100">
+                <h2 class="d-none d-lg-block">熱門主題</h2>
+                <div
+                  class="d-flex flex-lg-column justify-content-between justify-content-lg-start align-items-center align-items-lg-start mt-lg-auto">
+                  <div class="swiper-article-pagination mb-lg-8"></div>
+                  <div class="swiper-button-group d-flex align-items-center">
+                    <button type="button" class="swiper-article-button-prev btn btn-outline-neutral-400 lh-1 py-2">
+                      <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <div class="swiper-button-border d-inline-block"></div>
+                    <button type="button" class="swiper-article-button-next btn btn-outline-neutral-400 lh-1 py-2">
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- event -->
+        <section class="bg-primary-200">
+          <div class="event container py-12 py-lg-20 position-relative">
+            <div class="w-max-content mx-auto text-center">
+              <p class="h6 text-accent-200 mb-3">\ 母親節強檔活動 / </p>
+              <h2 class="h4 fs-lg-2 mb-6">家庭訂閱方案限時 7 折</h2>
+              <ul class="list-unstyled text-neutral-400 d-flex flex-column gap-4 mb-6 mb-md-10">
+                <li>
+                  <p class="text-start">
+                    <i class="bi bi-check-lg me-3"></i>
+                    每月最新文章無限閱讀
+                  </p>
+                </li>
+                <li>
+                  <p class="text-start">
+                    <i class="bi bi-check-lg me-3"></i>
+                    專屬會員限定內容
+                  </p>
+                </li>
+                <li>
+                  <p class="text-start">
+                    <i class="bi bi-check-lg me-3"></i>
+                    定期電子報
+                  </p>
+                </li>
+                <li>
+                  <p class="text-start">
+                    <i class="bi bi-check-lg me-3"></i>
+                    年度精選禮物
+                  </p>
+                </li>
+                <li>
+                  <p class="text-start">
+                    <i class="bi bi-check-lg me-3"></i>
+                    24 / 7 優先客戶服務
+                  </p>
+                </li>
+                <li>
+                  <p class="text-start">
+                    <i class="bi bi-check-lg me-3"></i>
+                    為每個成員量身打造專屬行程
+                  </p>
+                </li>
+              </ul>
+              <a href="./subscribe.html" class="btn btn-accent-200 h6">我想了解</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- trend -->
+        <section class="trend container py-12 py-lg-20">
+          <h2 class="h4 fs-lg-2 mb-6 mb-lg-10">大家都在看</h2>
+          <div class="row">
+            <div class="col-lg-4 col-xxl-3 d-none d-lg-block">
+              <div class="card p-6 bg-white h-100 border-0">
+                <ul class="list-group list-unstyled gap-6" id="list-tab" role="tablist">
+                  <li>
+                    <a class="list-group-item list-group-item-action active border-0 rounded-1 p-4 h5"
+                      id="list-001-list" data-bs-toggle="list" href="#list-001" role="tab" aria-controls="list-001"><i
+                        class="bi bi-dot me-3"></i>酒精路跑地圖</a>
+                  </li>
+                  <li>
+                    <a class="list-group-item list-group-item-action border-0 rounded-1 p-4 h5" id="list-002-list"
+                      data-bs-toggle="list" href="#list-002" role="tab" aria-controls="list-002"><i
+                        class="bi bi-dot me-3"></i>台北拉麵圖鑑</a>
+                  </li>
+                  <li>
+                    <a class="list-group-item list-group-item-action border-0 rounded-1 p-4 h5" id="list-003-list"
+                      data-bs-toggle="list" href="#list-003" role="tab" aria-controls="list-003"><i
+                        class="bi bi-dot me-3"></i>海島自由行</a>
+                  </li>
+                  <li>
+                    <a class="list-group-item list-group-item-action border-0 rounded-1 p-4 h5" id="list-004-list"
+                      data-bs-toggle="list" href="#list-004" role="tab" aria-controls="list-004"><i
+                        class="bi bi-dot me-3"></i>短天數出國推薦</a>
+                  </li>
+                  <li>
+                    <a class="list-group-item list-group-item-action border-0 rounded-1 p-4 h5" id="list-005-list"
+                      data-bs-toggle="list" href="#list-005" role="tab" aria-controls="list-005"><i
+                        class="bi bi-dot me-3"></i>週末露營趣</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-8 col-xxl-9">
+              <div class="card d-none d-lg-block p-10 bg-white border-0">
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="list-001" role="tabpanel" aria-labelledby="list-001-list">
+                    <div class="p-6 mb-4">
+                      <h3 class="h5 fs-lg-4 text-accent-200 mb-6">酒精路跑地圖</h3>
+                      <ul class="list-unstyled">
+                        <li class="h6 mb-5">｜城市酒吧人氣榜，盤點當紅熱門酒吧</li>
+                        <li class="h6 mb-5">｜你要的調酒師在這裡！五月全台酒吧客座活動整理</li>
+                        <li class="h6">｜台南老宅手工酒藏，尋味百年人文釀意</li>
+                      </ul>
+                    </div>
+                    <ul class="list-unstyled d-flex mx-4 mb-4">
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-1-4140643e.png" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-2-0511cb4f.png" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-3-1a547610.png" alt="trend photo">
+                      </li>
+                      <li class="trend-item">
+                        <img src="/week6-subscription-service/assets/hots-4-ec19ac92.png" alt="trend photo">
+                      </li>
+                    </ul>
+                    <div class="p-6">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="badge-group fs-5">
+                          <span class="badge bg-primary-300 me-2">#夜貓行程</span>
+                          <span class="badge bg-primary-300 me-2">#barhopping</span>
+                          <span class="badge bg-primary-300">#全台酒吧</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="list-002" role="tabpanel" aria-labelledby="list-002-list">
+                    <div class="p-6 mb-4">
+                      <h3 class="h5 fs-lg-4 text-accent-200 mb-6">台北拉麵圖鑑</h3>
+                      <ul class="list-unstyled">
+                        <li class="h6 mb-5">｜城市酒吧人氣榜，盤點當紅熱門酒吧</li>
+                        <li class="h6 mb-5">｜你要的調酒師在這裡！五月全台酒吧客座活動整理</li>
+                        <li class="h6">｜台南老宅手工酒藏，尋味百年人文釀意</li>
+                      </ul>
+                    </div>
+                    <ul class="list-unstyled d-flex mx-4 mb-4">
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-5-19acb698.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-6-c95b0221.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-7-d930b157.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item">
+                        <img src="/week6-subscription-service/assets/hots-8-9c1e8fde.jpg" alt="trend photo">
+                      </li>
+                    </ul>
+                    <div class="p-6">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="badge-group fs-5">
+                          <span class="badge bg-primary-300 me-2">#雞白湯</span>
+                          <span class="badge bg-primary-300 me-2">#拉麵</span>
+                          <span class="badge bg-primary-300">#台北美食</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="list-003" role="tabpanel" aria-labelledby="list-003-list">
+                    <div class="p-6 mb-4">
+                      <h3 class="h5 fs-lg-4 text-accent-200 mb-6">海島自由行</h3>
+                      <ul class="list-unstyled">
+                        <li class="h6 mb-5">｜私島慢活島嶼生活 - 在熱帶天堂品嘗新鮮海產</li>
+                        <li class="h6 mb-5">｜海島漂流記 - 在陽光、沙灘和比基尼的盛夏暢遊</li>
+                        <li class="h6">｜島嶼蹤跡 - 揭開加勒比海上世外桃源</li>
+                      </ul>
+                    </div>
+                    <ul class="list-unstyled d-flex mx-4 mb-4">
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-9-81e4331d.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-10-ba9cce4f.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-11-0bf0eec3.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item">
+                        <img src="/week6-subscription-service/assets/hots-12-e3a8c485.jpg" alt="trend photo">
+                      </li>
+                    </ul>
+                    <div class="p-6">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="badge-group fs-5">
+                          <span class="badge bg-primary-300 me-2">#熱帶國家</span>
+                          <span class="badge bg-primary-300 me-2">#海邊</span>
+                          <span class="badge bg-primary-300">#無敵海景</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="list-004" role="tabpanel" aria-labelledby="list-004-list">
+                    <div class="p-6 mb-4">
+                      <h3 class="h5 fs-lg-4 text-accent-200 mb-6">短天數出國推薦</h3>
+                      <ul class="list-unstyled">
+                        <li class="h6 mb-5">｜72小時東京遊走 - 當個時尚東京通</li>
+                        <li class="h6 mb-5">｜48小時曼谷遊玩全攻略</li>
+                        <li class="h6">｜三天兩夜賞櫻微醺東京</li>
+                      </ul>
+                    </div>
+                    <ul class="list-unstyled d-flex mx-4 mb-4">
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-13-1de0bf60.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-14-698b2a0e.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-15-79cd3ae0.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item">
+                        <img src="/week6-subscription-service/assets/hots-16-6610596f.jpg" alt="trend photo">
+                      </li>
+                    </ul>
+                    <div class="p-6">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="badge-group fs-5">
+                          <span class="badge bg-primary-300 me-2">#說走就走</span>
+                          <span class="badge bg-primary-300 me-2">#出國玩</span>
+                          <span class="badge bg-primary-300">#東亞</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="list-005" role="tabpanel" aria-labelledby="list-005-list">
+                    <div class="p-6 mb-4">
+                      <h3 class="h5 fs-lg-4 text-accent-200 mb-6">週末露營趣</h3>
+                      <ul class="list-unstyled">
+                        <li class="h6 mb-5">｜週末說走就走露營記</li>
+                        <li class="h6 mb-5">｜城市野營日記</li>
+                        <li class="h6">｜和寵物去露營 - 大自然之旅的雙倍快樂</li>
+                      </ul>
+                    </div>
+                    <ul class="list-unstyled d-flex mx-4 mb-4">
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-17-f68db3f1.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-18-d72b941f.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item me-1">
+                        <img src="/week6-subscription-service/assets/hots-19-a7c41a71.jpg" alt="trend photo">
+                      </li>
+                      <li class="trend-item">
+                        <img src="/week6-subscription-service/assets/hots-20-02bac90a.jpg" alt="trend photo">
+                      </li>
+                    </ul>
+                    <div class="p-6">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="badge-group fs-5">
+                          <span class="badge bg-primary-300 me-2">#戶外</span>
+                          <span class="badge bg-primary-300 me-2">#露營控</span>
+                          <span class="badge bg-primary-300">#凹豆</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-lg-none">
+                <div class="swiper-trend swiper">
+                  <ul class="swiper-wrapper p-0">
+                    <li class="swiper-slide">
+                      <div class="card bg-white p-4 rounded-3 border-0 shadow-sm">
+                        <div class="mb-4">
+                          <h3 class="h5 fs-lg-4 text-accent-200 mb-6">酒精路跑地圖</h3>
+                          <ul class="list-unstyled">
+                            <li class="h6 text-truncate mb-5">｜城市酒吧人氣榜，盤點當紅熱門酒吧</li>
+                            <li class="h6 text-truncate mb-5">｜你要的調酒師在這裡！五月全台酒吧客座活動整理</li>
+                            <li class="h6 text-truncate">｜台南老宅手工酒藏，尋味百年人文釀意</li>
+                          </ul>
+                        </div>
+                        <img src="/week6-subscription-service/assets/trend-1-25e43f01.jpg" alt="trend photo" class="rounded-1 mb-4">
+                        <div class="badge-group fs-5 text-center mb-4">
+                          <span class="badge bg-primary-300 me-2">#夜貓行程</span>
+                          <span class="badge bg-primary-300 me-2">#barhopping</span>
+                          <span class="badge bg-primary-300">#全台酒吧</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200 text-center py-3">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="card bg-white p-4 rounded-3 border-0 shadow-sm">
+                        <div class="mb-4">
+                          <h3 class="h5 fs-lg-4 text-accent-200 mb-6">台北拉麵圖鑑</h3>
+                          <ul class="list-unstyled">
+                            <li class="h6 text-truncate mb-5">｜城市酒吧人氣榜，盤點當紅熱門酒吧</li>
+                            <li class="h6 text-truncate mb-5">｜你要的調酒師在這裡！五月全台酒吧客座活動整理</li>
+                            <li class="h6 text-truncate">｜台南老宅手工酒藏，尋味百年人文釀意</li>
+                          </ul>
+                        </div>
+                        <img src="/week6-subscription-service/assets/trend-2-f80cdf58.jpg" alt="trend photo" class="rounded-1 mb-4">
+                        <div class="badge-group fs-5 text-center mb-4">
+                          <span class="badge bg-primary-300 me-2">#雞白湯</span>
+                          <span class="badge bg-primary-300 me-2">#拉麵</span>
+                          <span class="badge bg-primary-300">#台北美食</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200 text-center py-3">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="card bg-white p-4 rounded-3 border-0 shadow-sm">
+                        <div class="mb-4">
+                          <h3 class="h5 fs-lg-4 text-accent-200 mb-6">海島自由行</h3>
+                          <ul class="list-unstyled">
+                            <li class="h6 text-truncate mb-5">｜私島慢活島嶼生活 - 在熱帶天堂品嘗新鮮海產</li>
+                            <li class="h6 text-truncate mb-5">｜海島漂流記 - 在陽光、沙灘和比基尼的盛夏暢遊</li>
+                            <li class="h6 text-truncate">｜島嶼蹤跡 - 揭開加勒比海上世外桃源</li>
+                          </ul>
+                        </div>
+                        <img src="/week6-subscription-service/assets/trend-3-3a3f672b.jpg" alt="trend photo" class="rounded-1 mb-4">
+                        <div class="badge-group fs-5 text-center mb-4">
+                          <span class="badge bg-primary-300 me-2">#熱帶國家</span>
+                          <span class="badge bg-primary-300 me-2">#海邊</span>
+                          <span class="badge bg-primary-300">#無敵海景</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200 text-center py-3">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="card bg-white p-4 rounded-3 border-0 shadow-sm">
+                        <div class="mb-4">
+                          <h3 class="h5 fs-lg-4 text-accent-200 mb-6">短天數出國推薦</h3>
+                          <ul class="list-unstyled">
+                            <li class="h6 text-truncate mb-5">｜72小時東京遊走 - 當個時尚東京通</li>
+                            <li class="h6 text-truncate mb-5">｜48小時曼谷遊玩全攻略</li>
+                            <li class="h6 text-truncate">｜三天兩夜賞櫻微醺東京</li>
+                          </ul>
+                        </div>
+                        <img src="/week6-subscription-service/assets/trend-4-69785f21.jpg" alt="trend photo" class="rounded-1 mb-4">
+                        <div class="badge-group fs-5 text-center mb-4">
+                          <span class="badge bg-primary-300 me-2">#說走就走</span>
+                          <span class="badge bg-primary-300 me-2">#出國玩</span>
+                          <span class="badge bg-primary-300">#東亞</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200 text-center py-3">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="card bg-white p-4 rounded-3 border-0 shadow-sm">
+                        <div class="mb-4">
+                          <h3 class="h5 fs-lg-4 text-accent-200 mb-6">週末露營趣</h3>
+                          <ul class="list-unstyled">
+                            <li class="h6 text-truncate mb-5">｜週末說走就走露營記</li>
+                            <li class="h6 text-truncate mb-5">｜城市野營日記</li>
+                            <li class="h6 text-truncate">｜和寵物去露營 - 大自然之旅的雙倍快樂</li>
+                          </ul>
+                        </div>
+                        <img src="/week6-subscription-service/assets/trend-5-1ab6caa7.jpg" alt="trend photo" class="rounded-1 mb-4">
+                        <div class="badge-group fs-5 text-center mb-4">
+                          <span class="badge bg-primary-300 me-2">#戶外</span>
+                          <span class="badge bg-primary-300 me-2">#露營控</span>
+                          <span class="badge bg-primary-300">#凹豆</span>
+                        </div>
+                        <a href="./article.html" class="h5 link-accent-200 text-center py-3">
+                          View More
+                          <i class="ms-3 bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- taste -->
+        <section class="trend container py-12 py-lg-20">
+          <div class="d-flex justify-content-between align-items-center mb-6 mb-lg-10">
+            <h2 class="h4 fs-lg-2">品味生活</h2>
+            <div class="swiper-button-group d-none d-lg-flex align-items-center">
+              <button type="button" class="swiper-taste-button-prev btn btn-outline-neutral-400 lh-1 py-2">
+                <i class="bi bi-arrow-left"></i>
+              </button>
+              <div class="swiper-button-border d-inline-block"></div>
+              <button type="button" class="swiper-taste-button-next btn btn-outline-neutral-400 lh-1 py-2">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-taste swiper">
+            <ul class="swiper-wrapper p-0">
+              <li class="swiper-slide">
+                <div class="card border-0">
+                  <h3 class="h1 text-primary-400 mb-6 mb-lg-9">食.</h3>
+                  <img src="/week6-subscription-service/assets/life-1-5ad4ecc4.jpg" alt="trend photo" class="w-100 rounded-1 mb-6 mb-lg-9">
+                  <ul class="list-unstyled mb-6 mb-lg-9">
+                    <li class="h6 text-truncate mb-5">｜米其林三星主廚的那些絕活傳奇</li>
+                    <li class="h6 text-truncate mb-5">｜探秘成都的地道川味秘技與魅力</li>
+                    <li class="h6 text-truncate">｜義大利釀酒師對於酒的堅持執著</li>
+                  </ul>
+                  <a href="./article.html" class="h6 fs-lg-5 link-accent-200 text-center py-3">
+                    View More
+                    <i class="ms-3 bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card border-0">
+                  <h3 class="h1 text-primary-400 mb-6 mb-lg-9">藝.</h3>
+                  <img src="/week6-subscription-service/assets/life-2-ddc4b775.jpg" alt="trend photo" class="w-100 rounded-1 mb-6 mb-lg-9">
+                  <ul class="list-unstyled mb-6 mb-lg-9">
+                    <li class="h6 text-truncate mb-5">｜解構教主級時裝設計大師的獨特美學</li>
+                    <li class="h6 text-truncate mb-5">｜當代攝影師鏡頭中的光影離奇</li>
+                    <li class="h6 text-truncate">｜帶你穿縮中世紀，夏季文藝復興展</li>
+                  </ul>
+                  <a href="./article.html" class="h6 fs-lg-5 link-accent-200 text-center py-3">
+                    View More
+                    <i class="ms-3 bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card border-0">
+                  <h3 class="h1 text-primary-400 mb-6 mb-lg-9">旅.</h3>
+                  <img src="/week6-subscription-service/assets/life-3-06f353f3.jpg" alt="trend photo" class="w-100 rounded-1 mb-6 mb-lg-9">
+                  <ul class="list-unstyled mb-6 mb-lg-9">
+                    <li class="h6 text-truncate mb-5">｜遠離喧囂，偶探巴塔哥尼亞終界</li>
+                    <li class="h6 text-truncate mb-5">｜東京深度六區，帶你細品極簡魅力</li>
+                    <li class="h6 text-truncate">｜專賣奇珍異寶的東歐地下夜市</li>
+                  </ul>
+                  <a href="./article.html" class="h6 fs-lg-5 link-accent-200 text-center py-3">
+                    View More
+                    <i class="ms-3 bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card border-0">
+                  <h3 class="h1 text-primary-400 mb-6 mb-lg-9">食.</h3>
+                  <img src="/week6-subscription-service/assets/life-1-5ad4ecc4.jpg" alt="trend photo" class="w-100 rounded-1 mb-6 mb-lg-9">
+                  <ul class="list-unstyled mb-6 mb-lg-9">
+                    <li class="h6 text-truncate mb-5">｜米其林三星主廚的那些絕活傳奇</li>
+                    <li class="h6 text-truncate mb-5">｜探秘成都的地道川味秘技與魅力</li>
+                    <li class="h6 text-truncate">｜義大利釀酒師對於酒的堅持執著</li>
+                  </ul>
+                  <a href="./article.html" class="h6 fs-lg-5 link-accent-200 text-center py-3">
+                    View More
+                    <i class="ms-3 bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card border-0">
+                  <h3 class="h1 text-primary-400 mb-6 mb-lg-9">藝.</h3>
+                  <img src="/week6-subscription-service/assets/life-2-ddc4b775.jpg" alt="trend photo" class="w-100 rounded-1 mb-6 mb-lg-9">
+                  <ul class="list-unstyled mb-6 mb-lg-9">
+                    <li class="h6 text-truncate mb-5">｜解構教主級時裝設計大師的獨特美學</li>
+                    <li class="h6 text-truncate mb-5">｜當代攝影師鏡頭中的光影離奇</li>
+                    <li class="h6 text-truncate">｜帶你穿縮中世紀，夏季文藝復興展</li>
+                  </ul>
+                  <a href="./article.html" class="h6 fs-lg-5 link-accent-200 text-center py-3">
+                    View More
+                    <i class="ms-3 bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card border-0">
+                  <h3 class="h1 text-primary-400 mb-6 mb-lg-9">旅.</h3>
+                  <img src="/week6-subscription-service/assets/life-3-06f353f3.jpg" alt="trend photo" class="w-100 rounded-1 mb-6 mb-lg-9">
+                  <ul class="list-unstyled mb-6 mb-lg-9">
+                    <li class="h6 text-truncate mb-5">｜遠離喧囂，偶探巴塔哥尼亞終界</li>
+                    <li class="h6 text-truncate mb-5">｜東京深度六區，帶你細品極簡魅力</li>
+                    <li class="h6 text-truncate">｜專賣奇珍異寶的東歐地下夜市</li>
+                  </ul>
+                  <a href="./article.html" class="h6 fs-lg-5 link-accent-200 text-center py-3">
+                    View More
+                    <i class="ms-3 bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- subscription -->
+        <section class="bg-primary-200">
+          <div class="container py-12 py-lg-20">
+            <div class="row">
+              <div class="col-lg-6 mb-8 mb-lg-0">
+                <div
+                  class="text-center text-lg-start d-lg-flex flex-column justify-content-center align-items-start h-100">
+                  <p class="h6 fs-lg-5 text-neutral-400 mb-4">今天又不知道要去哪裡了嗎？</p>
+                  <h2 class="h4 fs-lg-2 mb-6 mb-lg-9">Vivre <br class="d-xl-none" />給你意想不到生活風格提案</h2>
+                  <a href="./subscribe.html" class="btn btn-accent-200 h6">
+                    馬上訂閱
+                    <i class="bi bi-arrow-right ms-3"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="d-lg-none">
+                  <div class="swiper-subscription swiper">
+                    <ul class="swiper-wrapper p-0 pt-5">
+                      <li class="swiper-slide">
+                        <div class="subscription card border-0 position-relative">
+                          <img src="/week6-subscription-service/assets/project-1-ab79211e.jpg" alt="project photo" class="rounded-1">
+                          <div class="subscription-tag h6 position-absolute">
+                            <i class="bi bi-play-fill"></i>
+                            人氣行程
+                          </div>
+                          <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                            親子露營要帶什麼？
+                            <i class="bi bi-arrow-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="subscription card border-0 position-relative">
+                          <img src="/week6-subscription-service/assets/project-2-9e6f3f5a.jpg" alt="project photo" class="rounded-1">
+                          <div class="subscription-tag h6 position-absolute">
+                            <i class="bi bi-play-fill"></i>
+                            編輯推薦
+                          </div>
+                          <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                            質感房間改造攻略！
+                            <i class="bi bi-arrow-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="subscription card border-0 position-relative">
+                          <img src="/week6-subscription-service/assets/project-3-e4c3f7a0.jpg" alt="project photo" class="rounded-1">
+                          <div class="subscription-tag h6 position-absolute">
+                            <i class="bi bi-play-fill"></i>
+                            編輯推薦
+                          </div>
+                          <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                            山女孩的健行筆記
+                            <i class="bi bi-arrow-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="subscription card border-0 position-relative">
+                          <img src="/week6-subscription-service/assets/project-4-4ec9322d.jpg" alt="project photo" class="rounded-1">
+                          <div class="subscription-tag h6 position-absolute">
+                            <i class="bi bi-play-fill"></i>
+                            熱門文章
+                          </div>
+                          <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                            適合溜小孩的海邊景點推薦
+                            <i class="bi bi-arrow-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="d-none d-lg-block">
+                  <ul class="list-unstyled row row-cols-2 mb-0">
+                    <li class="col mt-10">
+                      <div class="subscription card border-0 position-relative">
+                        <img src="/week6-subscription-service/assets/project-1-ab79211e.jpg" alt="project photo" class="rounded-1">
+                        <div class="subscription-tag h6 position-absolute">
+                          <i class="bi bi-play-fill"></i>
+                          人氣行程
+                        </div>
+                        <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                          親子露營要帶什麼？
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="subscription card border-0 position-relative">
+                        <img src="/week6-subscription-service/assets/project-2-9e6f3f5a.jpg" alt="project photo" class="rounded-1">
+                        <div class="subscription-tag h6 position-absolute">
+                          <i class="bi bi-play-fill"></i>
+                          編輯推薦
+                        </div>
+                        <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                          質感房間改造攻略！
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col mt-10">
+                      <div class="subscription card border-0 position-relative">
+                        <img src="/week6-subscription-service/assets/project-3-e4c3f7a0.jpg" alt="project photo" class="rounded-1">
+                        <div class="subscription-tag h6 position-absolute">
+                          <i class="bi bi-play-fill"></i>
+                          編輯推薦
+                        </div>
+                        <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                          山女孩的健行筆記
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col">
+                      <div class="subscription card border-0 position-relative">
+                        <img src="/week6-subscription-service/assets/project-4-4ec9322d.jpg" alt="project photo" class="rounded-1">
+                        <div class="subscription-tag h6 position-absolute">
+                          <i class="bi bi-play-fill"></i>
+                          熱門文章
+                        </div>
+                        <a href="#" class="subscription-link h6 link-primary-100 position-absolute">
+                          適合溜小孩的海邊景點推薦
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- contact -->
+        <div class="container py-12 py-lg-20">
+          <div
+            class="d-flex flex-column flex-lg-row justify-content-lg-between align-items-center align-items-lg-start">
+            <p class="h4 fs-lg-2 mb-4 mb-lg-0">想看什麼主題由你決定！</p>
+            <div class="text-center text-lg-end">
+              <p class="h5 fs-lg-4 mb-9 mb-lg-4">歡迎投稿與我們分享</p>
+              <a href="#" class="btn btn-accent-200 h6 fs-lg-5">聯絡我們</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+  <div class="container-lg py-5 py-lg-6 border-top border-neutral-300">
+    <p class="h6 text-primary-400 fw-normal text-center">©Vivre 2024 All right Reserved</p>
+  </div>
+</footer>
+        
+        
+  </body>
+
+</html>

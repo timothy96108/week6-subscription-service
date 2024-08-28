@@ -1,0 +1,1 @@
+import"./bootstrap.min-fb7f5f4f.js";import e from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";new e(".swiper-article",{slidesPerView:1,spaceBetween:24,autoplay:{enabled:!0,delay:3e3}});
